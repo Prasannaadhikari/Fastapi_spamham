@@ -151,9 +151,9 @@ predictions = pipeline.predict(msg_test)
 
 from sklearn.metrics import classification_report,confusion_matrix
 
-print(classification_report(label_test, predictions))
+# print(classification_report(label_test, predictions))
 
-print(confusion_matrix(label_test, predictions))
+# print(confusion_matrix(label_test, predictions))
 
 
 
@@ -170,30 +170,30 @@ pipeline2 = Pipeline([
 pipeline2.fit(msg_train, label_train)
 
 predictions2 = pipeline2.predict(msg_test)
-print(classification_report(label_test, predictions2))
+# print(classification_report(label_test, predictions2))
 
-print(confusion_matrix(label_test, predictions2))
+# print(confusion_matrix(label_test, predictions2))
 
-predict_msg =["You are awarded a Nikon Digital Camera. Call now","Call me","What's up?"]
+# predict_msg =["You are awarded a Nikon Digital Camera. Call now","Call me","What's up?"]
 
-pipeline.predict(predict_msg)
+# pipeline.predict(predict_msg)
 
-pipeline2.predict(predict_msg)
+# pipeline2.predict(predict_msg)
 
-import pickle
+# import pickle
 
-Pkl_Filename = "Spam_detection_NB.pkl" 
+# Pkl_Filename = "Spam_detection_NB.pkl" 
 
-with open(Pkl_Filename, 'wb') as file:  
-    pickle.dump(pipeline, file)
+# with open(Pkl_Filename, 'wb') as file:  
+#     pickle.dump(pipeline, file)
 
-with open(Pkl_Filename, 'rb') as file:  
-    Pickled_Spam_detection_using_NB_Model = pickle.load(file)
+# with open(Pkl_Filename, 'rb') as file:  
+#     Pickled_Spam_detection_using_NB_Model = pickle.load(file)
 
-Pickled_Spam_detection_using_NB_Model.predict(predict_msg)
+# Pickled_Spam_detection_using_NB_Model.predict(predict_msg)
 
-import joblib
+# import joblib
 
-joblib_file = "Spam_detection_RF_joblib.pkl"  
-joblib.dump(pipeline2, joblib_file)
+# joblib_file = "Spam_detection_RF_joblib.pkl"  
+# joblib.dump(pipeline2, joblib_file)
 

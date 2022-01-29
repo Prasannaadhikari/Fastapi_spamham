@@ -4,12 +4,12 @@ import numpy as np
 import pandas as pd 
 import pickle
 
-from sms_spam_detection import text_processing
+from sms_spam_detection import text_processing, pipeline
 
 app = FastAPI()
 
-pickle_file = open("Spam_detection_NB.pkl","rb")
-classifier = pickle.load(pickle_file)
+# pickle_file = open("Spam_detection_NB.pkl","rb")
+# classifier = pickle.load(pickle_file)
 
 @app.get('/')
 def index():
@@ -18,7 +18,7 @@ def index():
 @app.post('/predict')
 def predict_spamham(line):
 	data =[line]
-	value_out = classifier.predict(data)
+	value_out = pipeline.predict(data)
 	return{
 		'Prediction':  value_out[0]
 	}
